@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script> 
+    function inputNumber(id, min, max) {
+      this.id = id;
+      this.min = min;
+      this.max = max;
+      this.type = "number";
+    }
+    
+    function inputText(id, maxLength) {
+      this.id = id;
+      this.maxLength = maxLength;
+      this.type = "text";
+    }
+    
+    function inputCheckbox(id) {
+      this.id = id;
+      this.type = "checkbox";
+    }
+    
+    function inputRadio(id, optionList) {
+      this.id = id;
+      this.optionList = optionList;
+      this.type = "radio";
+    }
+    
+    function inputDate(id) {
+      this.id = id;
+      this.type = "date";
+    }
+    
+    function inputColor(id) {
+      this.id = id;
+      this.type = "color";
+    }
+    
+    function inputFile(id) {
+      this.id = id;
+      this.type= "file";
+    }
+    
+    function inputImage(id) {
+      this.id = id;
+      this.type = "image";
+    }
+    
+    function inputPassword(id) {
+      this.id = id;
+      this.type = "password";
+    }
+    
+    function inputRange(id, min, max) {
+      this.id = id;
+      this.min = min;
+      this.max = max;
+      this.type = "range";
+    }
+    
+    var teamForm = new Array(
+                      new inputNumber("teamNumber", 0, 9999),
+                      new inputText("teamName", 25),
+                      new inputRadio("launcherType", Array("Catapult", "Shooter", "Kicker")),
+                      new inputCheckbox("hasWheels"),
+                      new inputDate("date"),
+                      new inputColor("color"),
+                      new inputNumber("blankid", 0, 87),
+                      new inputFile("value"),
+                      new inputImage("blanksid"),
+                      new inputPassword("pass"),
+                      new inputRange("rang", 0, 10)
+                      );
+    console.log(teamForm);
+    console.log(teamForm[0]);
+    
+    var debugVal = new inputNumber("debugNum", 0, 10);
+    </script>
+</head>
+<body>
+  <form>
+    <script>
+      for(var i=0; i<teamForm.length; i++) {
+        document.write("<input type=" + teamForm[i].type + "><br>");
+      }
+    </script>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
